@@ -1,0 +1,155 @@
+# Lighting-Encrypted-design
+ HTML CSS JAVASCRIPT Hide options Experimental combination SVG animation gradiant colors,added javascript animation on canvas element executed at the same time without interfering with css two animations rendering separately. 
+
+@SoftwareRVG SoftwareRVG/Lighting Encrypted design by SOFTWARE RVG.markdown
+
+Lighting Encrypted design by SOFTWARE RVG
+index.html
+<canvas></canvas>
+<div class="widget-content">
+<div id="phaser-example"><canvas width="800" height="10" style="display: block; touch-action: none; -webkit-user-select: none; -webkit-tap-highlight-color: rgba(0, 24, 88, 0.8);
+width: 800px;height: 10px;"></div>
+
+<style>
+      
+/* Main styles */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:800);
+.text {
+  fill: url(#gr-radial);
+}
+/* Other styles */
+body {
+  min-height: 10px;
+  height: 1vh;
+  margin: 10;
+  background: radial-gradient(circle,#000000, #000000,#000000 , #B40404, #000000);
+} }
+body sgv {
+  background: #222 -webkit-linear-gradient(0deg, #222 50%, #272727 50%);
+  background: #222 linear-gradient(90deg, #222 50%, #272727 50%);
+  background-size: .2em 100%;
+  font: 8.1em/1 Open Sans, Impact;
+  text-transform: uppercase;
+  margin: 0;
+}
+body text {
+  background: #ff00ff -webkit-linear-gradient(0deg, #ff00ff 50%, #272727 50%);
+  background: #ff00ff linear-gradient(90deg, #ff00ff 50%, #272727 50%);
+  background-size: .1em 100%;
+  font: 1.2em/1 Open Sans, Impact;
+  text-transform: uppercase;
+  margin: 0;
+}
+svg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+    </style>
+
+<div class:"text"="">
+
+<svg viewBox="0 0 600 300">
+ <!-- Gradient -->
+  <radialGradient id="gr-radial" cx="50%" cy="50%" r="70%">
+    <!-- Animation for radius of gradient -->
+    <animate attributeName="r" values="0%;150%;100%;0%" dur="5s" repeatCount="indefinite"></animate>
+    <!-- Animation for colors of stop-color -->
+    <stop stop-color="#FFFf00" offset="0">
+      <animate attributeName="stop-color" values="#0000FF;#ffff00;#00FF00;#FF0000;#00FF00;#0000FF;#FFFF00;#00FF00;#FF0000;#0000FF;#FFFF00;#FF0000" dur="20s" repeatCount="indefinite"></animate>
+    </stop>
+    <stop stop-color="rgba(55,55,55,0)" offset="100%"></stop>
+  </radialGradient>
+  
+ 
+  <!-- Text -->
+  <text text-anchor="middle" x="50%" y="5%" dy=".35em" class="text">
+    © SOFTWARE RVG DESIGNS
+ </text>
+  
+ </svg></div>
+</div>
+  
+Lighting Encrypted design by SOFTWARE RVG.markdown
+Lighting Encrypted design by SOFTWARE RVG
+
+Experimental combination SVG animation gradiant colors,added javascript animation on canvas element executed at the same time without interfering with css two animations rendering separately
+
+A Pen by ROBERTO CARLOS VILLAR GARCIA on CodePen.
+
+License.
+script.js
+var canvas = document.getElementsByTagName('canvas')[0];
+var ctx = canvas.getContext('2d');
+canvas.width=canvas.height=400;
+ctx.fillRect(0,0,canvas.width,canvas.height);
+var count=0;
+pam();
+
+function pam(){
+var a,b,c,d,e,f,g,tim,max,x,y,px,py;
+tim=count;
+max=50;
+for(d=0;d<2;d++){
+for(b=0;b<7;b++){
+c=tim/57*(d?1:-1)+b/7*Math.PI*2;
+px=Math.sin(c)*195/max;
+py=-Math.cos(c)*195/max;
+x=y=200;
+for(a=0;a<max;a++){
+ctx.lineWidth=(a+1)/max*4;
+e=1-a/max;
+e*=e;
+e=1-e;
+e=(e*13)|0;
+r1=0.5+Math.sin(tim/3*(1+e/11)+a/11)/2;
+r2=1-r1;
+c=a/max;
+c=((Math.sin(c*13+tim/11)*r1+Math.sin(c*5*(1+e/13)-tim/13+e)*r2)*50)|0;
+f=c*1.8;
+if(f<0)f=0;
+ctx.strokeStyle="hsl("+((Math.abs(c-count+e*4)%360)|0)+",90%,"+(f)+"%)";
+ctx.beginPath();
+ctx.lineTo(x,y);
+ctx.lineTo(x+px,y+py);
+ctx.stroke();
+x+=px;
+y+=py;
+}
+}
+}
+count++;
+requestAnimationFrame(pam);
+}
+style.css
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background:radial-gradient(circle, #000000,#000000,#000000, , #ff0000);
+}
+
+canvas  {
+position: relative; top:10%;
+left:50%;
+margin-left:-50vmin;
+width:100vmin;
+height:100vmin;
+overflow:hidden;
+display: block;
+}
+svg { margin-top:10px;
+  position: absolute;
+  width: 100%;
+  height: 1%;}
+  
+  -------------------------------------------------------------------------------------------------------------------------
+@SoftwareRVG
+Owner
+
+View in edit mode render on codepen
+http://codepen.io/SoftwareRVG/pen/kXyOxN/
+@SoftwareRVG
+
+
+
